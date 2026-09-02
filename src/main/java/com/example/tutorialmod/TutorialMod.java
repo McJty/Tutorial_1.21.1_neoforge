@@ -1,8 +1,13 @@
 package com.example.tutorialmod;
 
+import com.example.tutorialmod.datagen.ModDataGenerators;
+import com.example.tutorialmod.registration.ModBlocks;
+import com.example.tutorialmod.registration.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
 /**
@@ -18,7 +23,18 @@ public final class TutorialMod {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod(IEventBus modEventBus) {
-        // We will use modEventBus in later tutorials to register blocks and items.
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+
+        modEventBus.addListener(TutorialMod::addCreativeTabItems);
+        modEventBus.addListener(ModDataGenerators::gatherData);
+
         LOGGER.info("Tutorial Mod is loading!");
+    }
+
+    private static void addCreativeTabItems(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModItems.TUTORIAL_BLOCK_ITEM);
+        }
     }
 }

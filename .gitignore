@@ -22,6 +22,10 @@ bin/
 
 ### Minecraft development ###
 run/
+**/src/generated/**/.cache/
+
+### Website documentation (published separately) ###
+/docs/
 
 ### Operating systems ###
 .DS_Store

@@ -7,6 +7,11 @@ plugins {
 version = mod_version
 group = mod_group_id
 
+sourceSets.main.resources {
+    // Include the JSON files created by the data generators.
+    srcDir 'src/generated/resources'
+}
+
 base {
     archivesName = mod_id
 }
@@ -26,6 +31,14 @@ neoForge {
         server {
             server()
             programArgument '--nogui'
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id,
+                    '--all',
+                    '--output', file('src/generated/resources').absolutePath,
+                    '--existing', file('src/main/resources').absolutePath
         }
     }
 

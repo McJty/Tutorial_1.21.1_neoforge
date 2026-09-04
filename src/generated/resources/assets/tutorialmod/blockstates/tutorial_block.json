@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "tutorialmod:block/tutorial_block"
+    "on=false": {
+      "model": "tutorialmod:block/tutorial_block_off"
+    },
+    "on=true": {
+      "model": "tutorialmod:block/tutorial_block_on"
     }
   }
 }

@@ -1,13 +1,14 @@
 package com.example.tutorialmod.datagen;
 
 import com.example.tutorialmod.registration.ModBlocks;
+import com.example.tutorialmod.registration.ModDataComponents;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 
 import java.util.List;
@@ -34,7 +35,15 @@ public final class ModBlockLootTableProvider extends LootTableProvider {
 
         @Override
         protected void generate() {
-            dropSelf(ModBlocks.TUTORIAL_BLOCK.get());
+            add(
+                    ModBlocks.TUTORIAL_BLOCK.get(),
+                    createSingleItemTable(ModBlocks.TUTORIAL_BLOCK.get())
+                            .apply(
+                                    CopyComponentsFunction.copyComponents(
+                                            CopyComponentsFunction.Source.BLOCK_ENTITY
+                                    ).include(ModDataComponents.IS_ON.get())
+                            )
+            );
         }
 
         @Override

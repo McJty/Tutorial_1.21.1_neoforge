@@ -1,7 +1,9 @@
 package com.example.tutorialmod;
 
 import com.example.tutorialmod.datagen.ModDataGenerators;
+import com.example.tutorialmod.registration.ModBlockEntities;
 import com.example.tutorialmod.registration.ModBlocks;
+import com.example.tutorialmod.registration.ModDataComponents;
 import com.example.tutorialmod.registration.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -23,8 +25,10 @@ public final class TutorialMod {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod(IEventBus modEventBus) {
+        ModDataComponents.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(TutorialMod::addCreativeTabItems);
         modEventBus.addListener(ModDataGenerators::gatherData);

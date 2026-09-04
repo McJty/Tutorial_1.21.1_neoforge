@@ -2,6 +2,7 @@ package com.example.tutorialmod.registration;
 
 import com.example.tutorialmod.TutorialMod;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -9,8 +10,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TutorialMod.MOD_ID);
 
-    public static final DeferredItem<BlockItem> TUTORIAL_BLOCK_ITEM =
-            ITEMS.registerSimpleBlockItem(ModBlocks.TUTORIAL_BLOCK);
+    public static final DeferredItem<BlockItem> TUTORIAL_BLOCK_ITEM = ITEMS.register(
+            "tutorial_block",
+            () -> new BlockItem(
+                    ModBlocks.TUTORIAL_BLOCK.get(),
+                    new Item.Properties()
+                            .component(ModDataComponents.IS_ON.get(), false)
+            )
+    );
 
     private ModItems() {
     }

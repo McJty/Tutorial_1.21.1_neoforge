@@ -23,3 +23,17 @@ type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="jei"
+type="optional"
+versionRange="[${jei_version},)"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.${mod_id}]]
+modId="theoneprobe"
+type="optional"
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"

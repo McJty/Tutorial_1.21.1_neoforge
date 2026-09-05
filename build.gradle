@@ -7,6 +7,35 @@ plugins {
 version = mod_version
 group = mod_group_id
 
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven { url = 'https://maven.blamejared.com' }
+        }
+        filter { includeGroup 'mezz.jei' }
+    }
+
+    exclusiveContent {
+        forRepository {
+            maven { url = 'https://maven.k-4u.nl' }
+        }
+        filter { includeGroup 'mcjty.theoneprobe' }
+    }
+}
+
+dependencies {
+    // Compile against integration APIs, and load the complete mods in dev runs.
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "mcjty.theoneprobe:theoneprobe:${top_version}"
+
+    // Use -Pexclude_optional_mods to verify that the mod also starts by itself.
+    if (!project.hasProperty('exclude_optional_mods')) {
+        runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+        runtimeOnly "mcjty.theoneprobe:theoneprobe:${top_version}"
+    }
+}
+
 sourceSets.main.resources {
     // Include the JSON files created by the data generators.
     srcDir 'src/generated/resources'
@@ -59,7 +88,8 @@ def generateModMetadata = tasks.register('generateModMetadata', ProcessResources
         mod_id                 : mod_id,
         mod_name               : mod_name,
         mod_license            : mod_license,
-        mod_version            : mod_version
+        mod_version            : mod_version,
+        jei_version            : jei_version
     ]
 
     inputs.properties replaceProperties

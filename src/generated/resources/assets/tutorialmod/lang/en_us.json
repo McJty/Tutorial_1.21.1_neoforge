@@ -1,3 +1,7 @@
 {
-  "block.tutorialmod.tutorial_block": "Tutorial Block"
+  "block.tutorialmod.tutorial_block": "Tutorial Block",
+  "jei.tutorialmod.tutorial_block.description": "Right-click with an empty hand to toggle this block on or off. Its state is preserved when broken and placed again.",
+  "state.tutorialmod.off": "Off",
+  "state.tutorialmod.on": "On",
+  "top.tutorialmod.state": "State: %s"
 }

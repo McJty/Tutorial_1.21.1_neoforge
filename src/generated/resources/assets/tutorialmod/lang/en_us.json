@@ -1,5 +1,10 @@
 {
+  "block.tutorialmod.generator": "Generator",
+  "block.tutorialmod.pig_spawner": "Pig Spawner",
   "block.tutorialmod.tutorial_block": "Tutorial Block",
+  "gui.tutorialmod.energy": "%s / %s FE",
+  "gui.tutorialmod.food": "Food",
+  "gui.tutorialmod.fuel": "Fuel",
   "jei.tutorialmod.tutorial_block.description": "Right-click with an empty hand to toggle this block on or off. Its state is preserved when broken and placed again.",
   "state.tutorialmod.off": "Off",
   "state.tutorialmod.on": "On",

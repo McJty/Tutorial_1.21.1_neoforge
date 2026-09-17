@@ -19,6 +19,9 @@ public final class ModItems {
             )
     );
 
+    public static final DeferredItem<BlockItem> GENERATOR = ITEMS.registerSimpleBlockItem(ModBlocks.GENERATOR);
+    public static final DeferredItem<BlockItem> PIG_SPAWNER = ITEMS.registerSimpleBlockItem(ModBlocks.PIG_SPAWNER);
+
     private ModItems() {
     }
 

@@ -1,6 +1,7 @@
 package com.example.tutorialmod.datagen;
 
 import com.example.tutorialmod.TutorialMod;
+import com.example.tutorialmod.block.GeneratorBlock;
 import com.example.tutorialmod.block.TutorialBlock;
 import com.example.tutorialmod.registration.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -16,8 +17,58 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        ResourceLocation baseTexture = modLoc("block/block_texture");
+        registerTutorialBlock();
+        registerGenerator();
+        registerPigSpawner();
+    }
 
+    private void registerGenerator() {
+        ResourceLocation baseTexture = modLoc("block/block_texture");
+        ModelFile generatorOff = models().orientable(
+                "generator",
+                baseTexture,
+                modLoc("block/generator"),
+                baseTexture
+        );
+        ModelFile generatorOn = models().orientable(
+                "generator_on",
+                baseTexture,
+                modLoc("block/generator_on"),
+                baseTexture
+        );
+        horizontalBlock(
+                ModBlocks.GENERATOR.get(),
+                state -> state.getValue(GeneratorBlock.ON) ? generatorOn : generatorOff
+        );
+        simpleBlockItem(ModBlocks.GENERATOR.get(), generatorOff);
+    }
+
+    private void registerPigSpawner() {
+        var spawner = models().getBuilder("pig_spawner")
+                .parent(models().getExistingFile(mcLoc("block/block")))
+                .texture("all", modLoc("block/spawner"))
+                .texture("particle", modLoc("block/spawner"));
+        spawner.element()
+                .from(0, 0, 0)
+                .to(16, 8, 16)
+                .allFaces((side, face) -> face.texture("#all"))
+                .end();
+
+        for (int x : new int[] {0, 14}) {
+            for (int z : new int[] {0, 14}) {
+                spawner.element()
+                        .from(x, 8, z)
+                        .to(x + 2, 16, z + 2)
+                        .allFaces((side, face) -> face.texture("#all"))
+                        .end();
+            }
+        }
+
+        simpleBlockWithItem(ModBlocks.PIG_SPAWNER.get(), spawner);
+    }
+
+    private void registerTutorialBlock() {
+        ResourceLocation baseTexture = modLoc("block/block_texture");
         ModelFile offModel = models().cubeBottomTop(
                 "tutorial_block_off",
                 baseTexture,

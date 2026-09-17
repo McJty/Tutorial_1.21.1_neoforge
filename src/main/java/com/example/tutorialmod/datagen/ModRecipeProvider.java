@@ -21,6 +21,27 @@ public final class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.GENERATOR.get())
+                .pattern("III")
+                .pattern("IFI")
+                .pattern("IRI")
+                .define('I', Items.IRON_INGOT)
+                .define('F', Items.FURNACE)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.PIG_SPAWNER.get())
+                .pattern("B B")
+                .pattern("ICI")
+                .pattern("IRI")
+                .define('B', Items.IRON_BARS)
+                .define('I', Items.IRON_INGOT)
+                .define('C', Items.CARROT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_carrot", has(Items.CARROT))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(
                         RecipeCategory.BUILDING_BLOCKS,
                         ModItems.TUTORIAL_BLOCK_ITEM.get()

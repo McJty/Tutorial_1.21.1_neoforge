@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,on=false": {
+      "model": "tutorialmod:block/generator",
+      "y": 90
+    },
+    "facing=east,on=true": {
+      "model": "tutorialmod:block/generator_on",
+      "y": 90
+    },
+    "facing=north,on=false": {
+      "model": "tutorialmod:block/generator"
+    },
+    "facing=north,on=true": {
+      "model": "tutorialmod:block/generator_on"
+    },
+    "facing=south,on=false": {
+      "model": "tutorialmod:block/generator",
+      "y": 180
+    },
+    "facing=south,on=true": {
+      "model": "tutorialmod:block/generator_on",
+      "y": 180
+    },
+    "facing=west,on=false": {
+      "model": "tutorialmod:block/generator",
+      "y": 270
+    },
+    "facing=west,on=true": {
+      "model": "tutorialmod:block/generator_on",
+      "y": 270
+    }
+  }
+}

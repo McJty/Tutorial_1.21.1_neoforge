@@ -48,6 +48,17 @@ base {
 // Minecraft 1.21.1 uses Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+sourceSets {
+    gameTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+configurations {
+    gameTestImplementation.extendsFrom implementation
+    gameTestRuntimeOnly.extendsFrom runtimeOnly
+}
+
 neoForge {
     version = project.neo_version
 
@@ -62,6 +73,13 @@ neoForge {
             programArgument '--nogui'
         }
 
+        gameTestServer {
+            type = "gameTestServer"
+            sourceSet = sourceSets.gameTest
+            gameDirectory = file('build/gametest')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
         data {
             data()
             programArguments.addAll '--mod', project.mod_id,
@@ -74,6 +92,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.gameTest)
         }
     }
 }
@@ -111,3 +130,10 @@ idea {
         downloadJavadoc = true
     }
 }
+
+// Keep GameTest code and its empty arena out of the published mod jar.
+tasks.register('prepareGameTestArena', Copy) {
+    from 'src/gameTest/resources'
+    into 'build/gametest/gameteststructures'
+}
+tasks.named('runGameTestServer') { dependsOn 'prepareGameTestArena' }

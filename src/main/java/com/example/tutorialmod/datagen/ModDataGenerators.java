@@ -17,6 +17,10 @@ public final class ModDataGenerators {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        generator.addProvider(
+                event.includeServer(),
+                new ModBlockTagsProvider(output, lookupProvider, existingFileHelper)
+        );
 
         generator.addProvider(
                 event.includeClient(),
@@ -25,6 +29,10 @@ public final class ModDataGenerators {
         generator.addProvider(
                 event.includeClient(),
                 new ModLanguageProvider(output)
+        );
+        generator.addProvider(
+                event.includeClient(),
+                new ModGuiTextureProvider(output)
         );
         generator.addProvider(
                 event.includeServer(),

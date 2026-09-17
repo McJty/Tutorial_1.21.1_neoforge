@@ -1,6 +1,8 @@
 package com.example.tutorialmod.registration;
 
 import com.example.tutorialmod.TutorialMod;
+import com.example.tutorialmod.block.GeneratorBlock;
+import com.example.tutorialmod.block.PigSpawnerBlock;
 import com.example.tutorialmod.block.TutorialBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,6 +21,25 @@ public final class ModBlocks {
                     .mapColor(MapColor.METAL)
                     .strength(3.0F)
                     .sound(SoundType.METAL)
+    );
+
+    public static final DeferredBlock<GeneratorBlock> GENERATOR = BLOCKS.registerBlock(
+            "generator",
+            GeneratorBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(3.0F)
+                    .sound(SoundType.METAL)
+    );
+
+    public static final DeferredBlock<PigSpawnerBlock> PIG_SPAWNER = BLOCKS.registerBlock(
+            "pig_spawner",
+            PigSpawnerBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(3.0F)
+                    .sound(SoundType.METAL)
+                    .noOcclusion()
     );
 
     private ModBlocks() {

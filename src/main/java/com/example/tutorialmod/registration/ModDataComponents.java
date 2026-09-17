@@ -21,6 +21,14 @@ public final class ModDataComponents {
                             .networkSynchronized(ByteBufCodecs.BOOL)
             );
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> ENERGY =
+            DATA_COMPONENTS.registerComponentType(
+                    "energy",
+                    builder -> builder
+                            .persistent(Codec.intRange(0, Integer.MAX_VALUE))
+                            .networkSynchronized(ByteBufCodecs.VAR_INT)
+            );
+
     private ModDataComponents() {
     }
 

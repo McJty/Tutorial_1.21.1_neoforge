@@ -2,6 +2,8 @@ package com.example.tutorialmod.registration;
 
 import com.example.tutorialmod.TutorialMod;
 import com.example.tutorialmod.block.entity.GeneratorBlockEntity;
+import com.example.tutorialmod.block.entity.ColorControllerBlockEntity;
+import com.example.tutorialmod.block.entity.TeleporterBlockEntity;
 import com.example.tutorialmod.block.entity.PigSpawnerBlockEntity;
 import com.example.tutorialmod.block.entity.TutorialBlockEntity;
 import net.minecraft.core.registries.Registries;
@@ -42,6 +44,15 @@ public final class ModBlockEntities {
                             ModBlocks.PIG_SPAWNER.get()
                     ).build(null)
             );
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TeleporterBlockEntity>> TELEPORTER =
+            BLOCK_ENTITY_TYPES.register("teleporter", () -> BlockEntityType.Builder.of(
+                    TeleporterBlockEntity::new, ModBlocks.TELEPORTER.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ColorControllerBlockEntity>> COLOR_CONTROLLER =
+            BLOCK_ENTITY_TYPES.register("color_controller", () -> BlockEntityType.Builder.of(
+                    ColorControllerBlockEntity::new, ModBlocks.DESTINATION_CONTROLLER.get(), ModBlocks.RECEIVER.get())
+                    .build(null));
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(

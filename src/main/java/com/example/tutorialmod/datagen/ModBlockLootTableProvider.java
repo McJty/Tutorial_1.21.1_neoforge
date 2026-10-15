@@ -35,6 +35,11 @@ public final class ModBlockLootTableProvider extends LootTableProvider {
 
         @Override
         protected void generate() {
+            dropSelf(ModBlocks.TELEPORTER_BASE.get());
+            dropSelf(ModBlocks.RECEIVER_BASE.get());
+            dropOther(ModBlocks.TELEPORTER.get(), ModBlocks.TELEPORTER_BASE.get());
+            dropOther(ModBlocks.DESTINATION_CONTROLLER.get(), ModBlocks.TELEPORTER_BASE.get());
+            dropOther(ModBlocks.RECEIVER.get(), ModBlocks.RECEIVER_BASE.get());
             for (Block machine : List.of(ModBlocks.GENERATOR.get(), ModBlocks.PIG_SPAWNER.get())) {
                 add(
                         machine,

@@ -22,6 +22,9 @@ public final class ModItems {
     public static final DeferredItem<BlockItem> GENERATOR = ITEMS.registerSimpleBlockItem(ModBlocks.GENERATOR);
     public static final DeferredItem<BlockItem> PIG_SPAWNER = ITEMS.registerSimpleBlockItem(ModBlocks.PIG_SPAWNER);
 
+    public static final DeferredItem<BlockItem> TELEPORTER_BASE = ITEMS.registerSimpleBlockItem(ModBlocks.TELEPORTER_BASE);
+    public static final DeferredItem<BlockItem> RECEIVER_BASE = ITEMS.registerSimpleBlockItem(ModBlocks.RECEIVER_BASE);
+
     private ModItems() {
     }
 

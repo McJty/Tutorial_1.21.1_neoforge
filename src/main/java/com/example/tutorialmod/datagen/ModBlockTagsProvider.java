@@ -21,6 +21,8 @@ public final class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider lookup) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GENERATOR.get(), ModBlocks.PIG_SPAWNER.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.GENERATOR.get(), ModBlocks.PIG_SPAWNER.get(),
+                ModBlocks.TELEPORTER_BASE.get(), ModBlocks.RECEIVER_BASE.get(), ModBlocks.TELEPORTER.get(),
+                ModBlocks.DESTINATION_CONTROLLER.get(), ModBlocks.RECEIVER.get());
     }
 }

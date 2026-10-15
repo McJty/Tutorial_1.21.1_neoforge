@@ -28,6 +28,10 @@ public final class ModDataGenerators {
         );
         generator.addProvider(
                 event.includeClient(),
+                new ModMultiblockModelProvider(output, existingFileHelper)
+        );
+        generator.addProvider(
+                event.includeClient(),
                 new ModLanguageProvider(output)
         );
         generator.addProvider(

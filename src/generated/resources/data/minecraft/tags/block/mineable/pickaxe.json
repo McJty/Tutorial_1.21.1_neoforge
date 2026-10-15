@@ -1,6 +1,11 @@
 {
   "values": [
     "tutorialmod:generator",
-    "tutorialmod:pig_spawner"
+    "tutorialmod:pig_spawner",
+    "tutorialmod:teleporter_base",
+    "tutorialmod:receiver_base",
+    "tutorialmod:teleporter",
+    "tutorialmod:destination_controller",
+    "tutorialmod:receiver"
   ]
 }

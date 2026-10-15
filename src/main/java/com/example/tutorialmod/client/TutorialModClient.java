@@ -30,6 +30,7 @@ public final class TutorialModClient {
     @SubscribeEvent
     private static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.PIG_SPAWNER.get(), PigSpawnerRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.COLOR_CONTROLLER.get(), ColorControllerRenderer::new);
     }
 
     @SubscribeEvent

@@ -15,6 +15,17 @@ public final class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.TUTORIAL_BLOCK.get(), "Tutorial Block");
         add(ModBlocks.GENERATOR.get(), "Generator");
         add(ModBlocks.PIG_SPAWNER.get(), "Pig Spawner");
+        add(ModBlocks.TELEPORTER_BASE.get(), "Teleporter Base");
+        add(ModBlocks.RECEIVER_BASE.get(), "Receiver Base");
+        add(ModBlocks.TELEPORTER.get(), "Teleporter");
+        add(ModBlocks.DESTINATION_CONTROLLER.get(), "Destination Controller");
+        add(ModBlocks.RECEIVER.get(), "Receiver");
+        add("itemGroup.tutorialmod", "Tutorial Mod");
+        add("message.tutorialmod.teleporter_formed", "Teleporter formed!");
+        add("message.tutorialmod.invalid_teleporter",
+                "Invalid teleporter. Required:\n- 3x3 base\n- Four corner pillars, each two blocks tall\n- 3x3 glass-block roof\nKeep the interior clear.");
+        add("message.tutorialmod.no_receiver", "No receiver with color code %s.");
+        add("message.tutorialmod.receiver_obstructed", "The receiver with color code %s is obstructed.");
         add("gui.tutorialmod.fuel", "Fuel");
         add("gui.tutorialmod.food", "Food");
         add("gui.tutorialmod.energy", "%s / %s FE");

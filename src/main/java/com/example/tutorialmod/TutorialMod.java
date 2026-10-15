@@ -6,14 +6,13 @@ import com.example.tutorialmod.registration.ModBlockEntities;
 import com.example.tutorialmod.registration.ModBlocks;
 import com.example.tutorialmod.registration.ModDataComponents;
 import com.example.tutorialmod.registration.ModItems;
+import com.example.tutorialmod.registration.ModCreativeTabs;
 import com.example.tutorialmod.registration.ModMenus;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
 /**
@@ -34,9 +33,9 @@ public final class TutorialMod {
         ModItems.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenus.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
         modEventBus.addListener(ModBlockEntities::registerCapabilities);
 
-        modEventBus.addListener(TutorialMod::addCreativeTabItems);
         modEventBus.addListener(ModDataGenerators::gatherData);
         modEventBus.addListener(TutorialMod::enqueueInterModCommunication);
 
@@ -49,11 +48,4 @@ public final class TutorialMod {
         }
     }
 
-    private static void addCreativeTabItems(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModItems.TUTORIAL_BLOCK_ITEM);
-            event.accept(ModItems.GENERATOR);
-            event.accept(ModItems.PIG_SPAWNER);
-        }
-    }
 }

@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,formed=false,part=corner": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 90
+    },
+    "facing=east,formed=false,part=pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 90
+    },
+    "facing=east,formed=false,part=platform": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 90
+    },
+    "facing=east,formed=false,part=upper_pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 90
+    },
+    "facing=east,formed=true,part=corner": {
+      "model": "tutorialmod:block/multiblock_corner",
+      "y": 90
+    },
+    "facing=east,formed=true,part=pillar": {
+      "model": "tutorialmod:block/multiblock_pillar",
+      "y": 90
+    },
+    "facing=east,formed=true,part=platform": {
+      "model": "tutorialmod:block/multiblock_platform",
+      "y": 90
+    },
+    "facing=east,formed=true,part=upper_pillar": {
+      "model": "tutorialmod:block/multiblock_upper_pillar",
+      "y": 90
+    },
+    "facing=north,formed=false,part=corner": {
+      "model": "tutorialmod:block/receiver_base"
+    },
+    "facing=north,formed=false,part=pillar": {
+      "model": "tutorialmod:block/receiver_base"
+    },
+    "facing=north,formed=false,part=platform": {
+      "model": "tutorialmod:block/receiver_base"
+    },
+    "facing=north,formed=false,part=upper_pillar": {
+      "model": "tutorialmod:block/receiver_base"
+    },
+    "facing=north,formed=true,part=corner": {
+      "model": "tutorialmod:block/multiblock_corner"
+    },
+    "facing=north,formed=true,part=pillar": {
+      "model": "tutorialmod:block/multiblock_pillar"
+    },
+    "facing=north,formed=true,part=platform": {
+      "model": "tutorialmod:block/multiblock_platform"
+    },
+    "facing=north,formed=true,part=upper_pillar": {
+      "model": "tutorialmod:block/multiblock_upper_pillar"
+    },
+    "facing=south,formed=false,part=corner": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 180
+    },
+    "facing=south,formed=false,part=pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 180
+    },
+    "facing=south,formed=false,part=platform": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 180
+    },
+    "facing=south,formed=false,part=upper_pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 180
+    },
+    "facing=south,formed=true,part=corner": {
+      "model": "tutorialmod:block/multiblock_corner",
+      "y": 180
+    },
+    "facing=south,formed=true,part=pillar": {
+      "model": "tutorialmod:block/multiblock_pillar",
+      "y": 180
+    },
+    "facing=south,formed=true,part=platform": {
+      "model": "tutorialmod:block/multiblock_platform",
+      "y": 180
+    },
+    "facing=south,formed=true,part=upper_pillar": {
+      "model": "tutorialmod:block/multiblock_upper_pillar",
+      "y": 180
+    },
+    "facing=west,formed=false,part=corner": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 270
+    },
+    "facing=west,formed=false,part=pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 270
+    },
+    "facing=west,formed=false,part=platform": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 270
+    },
+    "facing=west,formed=false,part=upper_pillar": {
+      "model": "tutorialmod:block/receiver_base",
+      "y": 270
+    },
+    "facing=west,formed=true,part=corner": {
+      "model": "tutorialmod:block/multiblock_corner",
+      "y": 270
+    },
+    "facing=west,formed=true,part=pillar": {
+      "model": "tutorialmod:block/multiblock_pillar",
+      "y": 270
+    },
+    "facing=west,formed=true,part=platform": {
+      "model": "tutorialmod:block/multiblock_platform",
+      "y": 270
+    },
+    "facing=west,formed=true,part=upper_pillar": {
+      "model": "tutorialmod:block/multiblock_upper_pillar",
+      "y": 270
+    }
+  }
+}

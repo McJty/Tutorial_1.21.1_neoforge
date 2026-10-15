@@ -25,8 +25,14 @@ Use `gradlew.bat` instead of `./gradlew` on Windows.
 # Start Minecraft with the mod installed
 ./gradlew runClient
 
+# Regenerate models, recipes, loot tables, and translations
+./gradlew runData
+
 # Compile and package the mod
 ./gradlew build
+
+# Run the machine and multiblock GameTests
+./gradlew runGameTestServer -Pexclude_optional_mods
 ```
 
 The built mod JAR appears in `build/libs/`.
@@ -40,9 +46,11 @@ gradle.properties     Minecraft, NeoForge, and mod settings
 build.gradle          Build and development-run setup
 ```
 
-The starting mod only writes `Tutorial Mod is loading!` to the game log. This
-keeps the first project focused on setup; blocks, items, and other features can
-be added one concept at a time in later tutorials.
+The project includes the examples through tutorial 6: blocks and data
+generation, block entities, JEI and The One Probe integrations, energy machines,
+and color coded teleporter and receiver multiblocks. Follow the chapters in
+`docs/`, starting with [basic setup](docs/01-basic-setup.md). The newest chapter
+is [tutorial 6: multiblocks](docs/06-multiblocks.md).
 
 ## Renaming the mod
 

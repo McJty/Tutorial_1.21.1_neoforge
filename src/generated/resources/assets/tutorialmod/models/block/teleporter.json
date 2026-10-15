@@ -1,0 +1,138 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#all"
+        },
+        "east": {
+          "texture": "#all"
+        },
+        "north": {
+          "texture": "#all"
+        },
+        "south": {
+          "texture": "#all"
+        },
+        "up": {
+          "texture": "#all"
+        },
+        "west": {
+          "texture": "#all"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        8,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#pad"
+        },
+        "east": {
+          "texture": "#pad"
+        },
+        "north": {
+          "texture": "#pad"
+        },
+        "south": {
+          "texture": "#pad"
+        },
+        "up": {
+          "texture": "#pad"
+        },
+        "west": {
+          "texture": "#pad"
+        }
+      },
+      "from": [
+        5,
+        8,
+        2
+      ],
+      "to": [
+        11,
+        8.1,
+        14
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#pad"
+        },
+        "east": {
+          "texture": "#pad"
+        },
+        "north": {
+          "texture": "#pad"
+        },
+        "south": {
+          "texture": "#pad"
+        },
+        "up": {
+          "texture": "#pad"
+        },
+        "west": {
+          "texture": "#pad"
+        }
+      },
+      "from": [
+        3,
+        8,
+        3
+      ],
+      "to": [
+        13,
+        8.1,
+        13
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#pad"
+        },
+        "east": {
+          "texture": "#pad"
+        },
+        "north": {
+          "texture": "#pad"
+        },
+        "south": {
+          "texture": "#pad"
+        },
+        "up": {
+          "texture": "#pad"
+        },
+        "west": {
+          "texture": "#pad"
+        }
+      },
+      "from": [
+        2,
+        8,
+        5
+      ],
+      "to": [
+        14,
+        8.1,
+        11
+      ]
+    }
+  ],
+  "textures": {
+    "all": "minecraft:block/iron_block",
+    "pad": "minecraft:block/purple_concrete",
+    "particle": "minecraft:block/iron_block"
+  }
+}

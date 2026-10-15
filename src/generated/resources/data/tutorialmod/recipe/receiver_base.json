@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "III",
+    "IRI",
+    "III"
+  ],
+  "result": {
+    "count": 8,
+    "id": "tutorialmod:receiver_base"
+  }
+}
